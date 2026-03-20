@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정윤석 | Game Client Programmer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">CERON<span class="accent">.</span></span>
+      <ul class="nav-links">
+        <li><a href="#hero">소개</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#skills">기술 스택</a></li>
+        <li><a href="#growth">성장</a></li>
+        <li><a href="#contact">연락</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <p class="hero-label">Game Client Programmer</p>
+      <h1 class="hero-title">정윤석<span class="accent">.</span></h1>
+      <p class="hero-sub">
+        인게임 시스템 구현부터 AI 설계, 최적화까지<br />
+        플레이 흐름을 안정적으로 뒷받침하는 클라이언트 프로그래머입니다.
+      </p>
+      <div class="hero-tags">
+        <span>Unity</span><span>C#</span><span>Behavior Tree</span><span>Scriptable Object</span><span>NavMesh</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">프로젝트 보기</a>
+        <a href="https://github.com/ceron999" target="_blank" class="btn-outline">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll ↓</div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title">Projects<span class="accent">.</span></h2>
+
+      <!-- Project HD -->
+      <div class="project-card featured" data-project="hd">
+        <div class="project-header">
+          <div>
+            <span class="project-tag">대표 프로젝트</span>
+            <h3 class="project-name">Project HD</h3>
+            <p class="project-desc">HD-2D 익스트랙션 어드벤처 | 6인 팀 | 2025.08 ~ 진행 중</p>
+          </div>
+          <a href="https://youtu.be/dKIKGcPVkH4" target="_blank" class="btn-watch">▶ 플레이 영상</a>
+        </div>
+        <div class="project-body">
+          <div class="contrib-grid">
+            <div class="contrib-item">
+              <h4>Squad Command System</h4>
+              <p>BT + Input System으로 아군 캐릭터 이동/공격/스킬/상호작용 명령 통제. Command 추상화로 BT가 실행·전환 담당. BlackBoard에 약 30개 데이터 캐싱으로 중복 연산 제거.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>Behavior Tree</h4>
+              <p>FSM 대신 BT 채택. 캡틴/사수/탱커/힐러/채광 5개 특성별 BT 초기화. 재사용 가능한 Node 분리. Idle → Warning → Chase → Attack 적 AI 단계 구현.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>Game System</h4>
+              <p>Skill (SO + Factory), Noise (스프레드/에어리어 × 싱글/멀티 × 인스턴트/서스테인/에코), 인벤토리, 미션, 카메라, VFX, Sound Manager, Buff 시스템 구현.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>최적화</h4>
+              <p>BT tick 분산, OverlapSphereNonAlloc, SqrMagnitude 적용. GC Alloc 80KB+ → 1KB 이하 감소. 미니맵 전용 Renderer로 Camera Render 50% 이상 절감.</p>
+            </div>
+          </div>
+          <div class="project-tech">
+            <span>Unity 2022.3</span><span>Input System</span><span>NavMesh</span><span>Behavior Tree</span><span>Scriptable Object</span><span>Odin Inspector</span><span>Spine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libs Rarry -->
+      <div class="project-card" data-project="lr">
+        <div class="project-header">
+          <div>
+            <h3 class="project-name">Libs Rarry <span class="project-sub">(Project LR)</span></h3>
+            <p class="project-desc">3D 로그라이크 덱 빌딩 | 6인 팀 | 2025.01 ~ 진행 중</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="contrib-grid">
+            <div class="contrib-item">
+              <h4>볼륨 확장 & 연출</h4>
+              <p>5회 전투 → 50회 전투/이벤트/보스 (Slay the Spire 방식). DoTween → Cinemachine 여러 대로 시작 연출 전환. 호버링 카드 UI, 버튼으로 적 선택 구조 구현.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>Camera Stack 렌더링</h4>
+              <p>UI Camera + OverUI Camera를 Main Camera stack에 배치. 늑대 오브젝트를 OverUI Layer로 설정해 스킬 사용 시 Fade UI 이후 Wolf 렌더링 구현.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>Google Sheets 파이프라인</h4>
+              <p>Google Sheet API → GoogleSheetParser → ISheetData/IWrapper → JSON 저장. 제네릭 ConvertResponseToJson&lt;T, TWrapper&gt; 구조로 범용성 확보. 기획자가 시트 수정 시 Unity에서 자동 갱신.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>시스템 설계</h4>
+              <p>UML 기반 오브젝트 관계도 작성 후 작업 시작. Stack 기반 턴당 n개 스킬 실행 + 연쇄 발동 시스템. Encounter 이벤트(스킬 강화/가챠/스탯 변화) 구현.</p>
+            </div>
+          </div>
+          <div class="project-tech">
+            <span>Unity 6</span><span>Cinemachine</span><span>DOTween</span><span>Camera Stack</span><span>Google Sheets API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side TPS -->
+      <div class="project-card" data-project="tps">
+        <div class="project-header">
+          <div>
+            <h3 class="project-name">Side TPS Project</h3>
+            <p class="project-desc">3D TPS 자기계발 프로젝트 | 개인</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="contrib-grid contrib-grid-3">
+            <div class="contrib-item">
+              <h4>플레이어 & 무기</h4>
+              <p>걷기/달리기/앉기 8방향 이동. 라이플/스나이퍼(Zoom)/권총/수류탄/C4 5종 무기. Object Pool 적용.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>Animation Rigging & AI</h4>
+              <p>Aim Rig로 에임 연동. FSM 기반 적 AI (Search/Battle/Die/TakeWarning), 5개 순찰 지점 자율 순찰.</p>
+            </div>
+            <div class="contrib-item">
+              <h4>연출 & UI</h4>
+              <p>Bloom/Color Grading 사막 분위기 연출. Dolly Track 카메라. MiniMap, Timer, Crosshair, 상황판 UI.</p>
+            </div>
+          </div>
+          <div class="project-tech">
+            <span>Unity</span><span>Rigging</span><span>Cinemachine</span><span>NavMesh</span><span>Post-Processing</span><span>UGUI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ETC -->
+      <div class="project-card" data-project="etc">
+        <div class="project-header">
+          <div>
+            <h3 class="project-name">ETC <span class="project-sub">동아리 프로젝트</span></h3>
+            <p class="project-desc">홍익대 게임 개발 동아리 EXP | 2021 ~ 2023 | 출시 5개</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="etc-timeline">
+            <div class="etc-item">
+              <span class="etc-year">2021</span>
+              <span class="etc-game">우리집은 어디에?</span>
+            </div>
+            <div class="etc-item">
+              <span class="etc-year">2022</span>
+              <span class="etc-game">Ghost</span>
+            </div>
+            <div class="etc-item">
+              <span class="etc-year">2022</span>
+              <span class="etc-game">어서오세요. 카페 24에</span>
+            </div>
+            <div class="etc-item highlight">
+              <span class="etc-year">2023</span>
+              <span class="etc-game">Neo Slasher <em>— 사이버펑크 뱀서라이크, 60개 아이템, 20레벨 특성 시스템</em></span>
+            </div>
+            <div class="etc-item">
+              <span class="etc-year">2023</span>
+              <span class="etc-game">Dumbest Letter</span>
+            </div>
+          </div>
+          <div class="project-tech">
+            <span>Rigging</span><span>Cinemachine</span><span>NavMesh</span><span>JSON</span><span>FSM AI</span><span>Dialogue System</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-title">Skills<span class="accent">.</span></h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Engine / Language</h4>
+          <div class="skill-tags"><span>Unity 5/6</span><span>C#</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>게임 시스템</h4>
+          <div class="skill-tags"><span>Behavior Tree</span><span>FSM</span><span>NavMesh</span><span>Scriptable Object</span><span>Object Pool</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>렌더링 / 연출</h4>
+          <div class="skill-tags"><span>URP</span><span>Cinemachine</span><span>Spine</span><span>Post-Processing</span><span>Shader Graph</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>데이터 / 협업</h4>
+          <div class="skill-tags"><span>JSON</span><span>Google Sheets API</span><span>Excel</span><span>GitHub</span><span>Notion</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>3rd Party</h4>
+          <div class="skill-tags"><span>Odin Inspector</span><span>DOTween</span><span>Input System</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWTH -->
+  <section id="growth">
+    <div class="section-inner">
+      <h2 class="section-title">Growth<span class="accent">.</span></h2>
+      <div class="growth-grid">
+        <div class="growth-item">
+          <div class="growth-icon">&#x1F4BB;</div>
+          <h4>코딩 테스트</h4>
+          <p>C++ 프로그래머스 알고리즘 문제 풀이. Sort / Simulation / DP / Greedy. 노션에 핵심 아이디어·시간 복잡도·오답 노트 형식으로 정리 중.</p>
+        </div>
+        <div class="growth-item">
+          <div class="growth-icon">&#x1F4D6;</div>
+          <h4>기술 학습</h4>
+          <p>Unity 6 Shader Graph 입문. More Effective C# / 유니티 디자인 패턴 학습. ECS 구조 및 NavMesh 최적화 적용 검토 중.</p>
+        </div>
+        <div class="growth-item">
+          <div class="growth-icon">&#x1F3AE;</div>
+          <h4>행사 참여</h4>
+          <p>2025 Unite Seoul 참가. 다양한 인사이트를 실제 프로젝트에 적용 중.</p>
+        </div>
+        <div class="growth-item">
+          <div class="growth-icon">&#x1F527;</div>
+          <h4>파이프라인 구축</h4>
+          <p>Google Sheets-Unity 연동 파이프라인 직접 구축. Spine 4방향 상하체 분리 애니메이션 구현.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title">Contact<span class="accent">.</span></h2>
+      <p class="contact-desc">함께 만들어갈 게임이 있다면 언제든 연락주세요.</p>
+      <div class="contact-links">
+        <a href="mailto:ceron999@naver.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">ceron999@naver.com</span>
+        </a>
+        <a href="https://github.com/ceron999" target="_blank" class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/ceron999</span>
+        </a>
+        <a href="tel:010-9911-8362" class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">010-9911-8362</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jung Yunseok. Built with GitHub Pages.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
