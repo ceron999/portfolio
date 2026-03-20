@@ -22,6 +22,18 @@
         <li><a href="#growth">성장</a></li>
         <li><a href="#contact">연락</a></li>
       </ul>
+      <button class="nav-hamburger" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile">
+      <ul>
+        <li><a href="#hero">소개</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#skills">기술 스택</a></li>
+        <li><a href="#growth">성장</a></li>
+        <li><a href="#contact">연락</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -46,6 +58,88 @@
     <div class="hero-scroll-hint">scroll ↓</div>
   </section>
 
+  <!-- STATUS -->
+  <section id="status">
+    <div class="section-inner">
+      <h2 class="section-title">Status<span class="accent">.</span></h2>
+      <div class="status-grid">
+
+        <!-- 프로필 카드 -->
+        <div class="status-card">
+          <div class="status-profile-row">
+            <div class="status-avatar">YS</div>
+            <div>
+              <div class="status-name">정윤석</div>
+              <div class="status-role">Game Client Programmer</div>
+              <span class="status-class-badge">CLASS : Unity Developer</span>
+            </div>
+          </div>
+          <div class="status-bars">
+            <div class="status-bar-row">
+              <span class="status-bar-label">GAME SYSTEMS</span>
+              <div class="status-bar-track"><div class="status-bar-fill" style="width:90%"></div></div>
+              <span class="status-bar-num">90</span>
+            </div>
+            <div class="status-bar-row">
+              <span class="status-bar-label">AI / BEHAVIOR</span>
+              <div class="status-bar-track"><div class="status-bar-fill" style="width:88%"></div></div>
+              <span class="status-bar-num">88</span>
+            </div>
+            <div class="status-bar-row">
+              <span class="status-bar-label">OPTIMIZATION</span>
+              <div class="status-bar-track"><div class="status-bar-fill" style="width:85%"></div></div>
+              <span class="status-bar-num">85</span>
+            </div>
+            <div class="status-bar-row">
+              <span class="status-bar-label">PIPELINE</span>
+              <div class="status-bar-track"><div class="status-bar-fill" style="width:80%"></div></div>
+              <span class="status-bar-num">80</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 핵심 스탯 카드 -->
+        <div class="status-card">
+          <div class="status-panel-label">CORE STATS</div>
+          <div class="status-stat-list">
+            <div class="status-stat-item">
+              <span class="status-stat-key">팀 프로젝트</span>
+              <span class="status-stat-val">6인 팀 × 2</span>
+            </div>
+            <div class="status-stat-item">
+              <span class="status-stat-key">출시 게임</span>
+              <span class="status-stat-val">5개</span>
+            </div>
+            <div class="status-stat-item">
+              <span class="status-stat-key">구현 시스템</span>
+              <span class="status-stat-val">10종+</span>
+            </div>
+            <div class="status-stat-item">
+              <span class="status-stat-key">GC 최적화</span>
+              <span class="status-stat-val">200KB→0B</span>
+            </div>
+          </div>
+          <div class="status-divider"></div>
+          <div class="status-checklist">
+            <div class="status-check-item">
+              <span class="status-check-icon">▸</span>
+              UML 기반 사전 설계 후 구현하는 개발 습관
+            </div>
+            <div class="status-check-item">
+              <span class="status-check-icon">▸</span>
+              재사용 가능한 Node 기반 Behavior Tree 설계
+            </div>
+            <div class="status-check-item">
+              <span class="status-check-icon">▸</span>
+              2025 Nexon GameJam 참가 · 2025 Unite Seoul 참가
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
@@ -62,26 +156,34 @@
           <a href="https://youtu.be/dKIKGcPVkH4" target="_blank" class="btn-watch">▶ 플레이 영상</a>
         </div>
         <div class="project-body">
+          <img src="images/hd-gameplay.jpg" alt="Project HD 인게임 화면" class="project-thumb">
           <div class="contrib-grid">
             <div class="contrib-item">
               <h4>Squad Command System</h4>
-              <p>BT + Input System으로 아군 캐릭터 이동/공격/스킬/상호작용 명령 통제. Command 추상화로 BT가 실행·전환 담당. BlackBoard에 약 30개 데이터 캐싱으로 중복 연산 제거.</p>
+              <p>BT + Input System으로 아군 캐릭터 이동/공격/정지/집합/비살상/스킬/아이템/상호작용 8가지 명령 통제. Command 추상화로 BT가 실행·전환 담당. BlackBoard에 약 30개 데이터 캐싱으로 중복 연산 제거.</p>
             </div>
-            <div class="contrib-item">
+            <div class="contrib-item key">
               <h4>Behavior Tree</h4>
-              <p>FSM 대신 BT 채택. 캡틴/사수/탱커/힐러/채광 5개 특성별 BT 초기화. 재사용 가능한 Node 분리. Idle → Warning → Chase → Attack 적 AI 단계 구현.</p>
+              <p>FSM 대신 BT 채택. <strong>사수/탱커/힐러/채광 4개 특성별 BT</strong>를 캐릭터 생성 시 초기화. 재사용 가능한 Node 분리. 적 AI Idle → Warning → Chase → Attack 단계 구현.</p>
+              <div class="contrib-imgs">
+                <img src="images/hd-bt-1.jpg" alt="BT 코드 1" class="contrib-img">
+                <img src="images/hd-bt-2.jpg" alt="BT 코드 2" class="contrib-img">
+              </div>
             </div>
             <div class="contrib-item">
               <h4>Game System</h4>
-              <p>Skill (SO + Factory), Noise (스프레드/에어리어 × 싱글/멀티 × 인스턴트/서스테인/에코), 인벤토리, 미션, 카메라, VFX, Sound Manager, Buff 시스템 구현.</p>
+              <p>Skill (SO + Factory), Noise (스프레드/에어리어 × 싱글/멀티 × 인스턴트/서스테인/에코), 인벤토리, 미션, 카메라, VFX, Sound Manager, Buff 시스템 총 10종 구현.</p>
             </div>
-            <div class="contrib-item">
+            <div class="contrib-item key">
               <h4>최적화</h4>
-              <p>BT tick 분산, OverlapSphereNonAlloc, SqrMagnitude 적용. GC Alloc 80KB+ → 1KB 이하 감소. 미니맵 전용 Renderer로 Camera Render 50% 이상 절감.</p>
+              <p>BT tick 분산(0.1~0.2s), OverlapSphereNonAlloc, SqrMagnitude 적용. 시야 시스템 <strong>GC Alloc 200KB+ → 0B 수준으로 감소</strong>. 미니맵 전용 Renderer로 <strong>Camera Render 50% 이상 절감</strong>.</p>
+              <div class="contrib-imgs">
+                <img src="images/hd-minimap.jpg" alt="미니맵 최적화 화면" class="contrib-img">
+              </div>
             </div>
           </div>
           <div class="project-tech">
-            <span>Unity 2022.3</span><span>Input System</span><span>NavMesh</span><span>Behavior Tree</span><span>Scriptable Object</span><span>Odin Inspector</span><span>Spine</span>
+            <span>Unity 6</span><span>Input System</span><span>NavMesh</span><span>Behavior Tree</span><span>Scriptable Object</span><span>Odin Inspector</span><span>Spine</span>
           </div>
         </div>
       </div>
@@ -91,26 +193,33 @@
         <div class="project-header">
           <div>
             <h3 class="project-name">Libs Rarry <span class="project-sub">(Project LR)</span></h3>
-            <p class="project-desc">3D 로그라이크 덱 빌딩 | 6인 팀 | 2025.01 ~ 진행 중</p>
+            <p class="project-desc">3D 로그라이크 덱 빌딩 | 6인 팀 | 2024 Nexon GameJam 프로토타입 → 출시 목적 개발 중</p>
           </div>
         </div>
         <div class="project-body">
+          <img src="images/lr-title.jpg" alt="Libs Rarry 타이틀 화면" class="project-thumb">
           <div class="contrib-grid">
             <div class="contrib-item">
               <h4>볼륨 확장 & 연출</h4>
               <p>5회 전투 → 50회 전투/이벤트/보스 (Slay the Spire 방식). DoTween → Cinemachine 여러 대로 시작 연출 전환. 호버링 카드 UI, 버튼으로 적 선택 구조 구현.</p>
+              <div class="contrib-imgs">
+                <img src="images/lr-stage.jpg" alt="스테이지 선택 화면" class="contrib-img">
+              </div>
             </div>
             <div class="contrib-item">
               <h4>Camera Stack 렌더링</h4>
               <p>UI Camera + OverUI Camera를 Main Camera stack에 배치. 늑대 오브젝트를 OverUI Layer로 설정해 스킬 사용 시 Fade UI 이후 Wolf 렌더링 구현.</p>
             </div>
-            <div class="contrib-item">
+            <div class="contrib-item key">
               <h4>Google Sheets 파이프라인</h4>
-              <p>Google Sheet API → GoogleSheetParser → ISheetData/IWrapper → JSON 저장. 제네릭 ConvertResponseToJson&lt;T, TWrapper&gt; 구조로 범용성 확보. 기획자가 시트 수정 시 Unity에서 자동 갱신.</p>
+              <p><strong>Google Sheet API → GoogleSheetParser → ISheetData/IWrapper → JSON</strong> 저장. 제네릭 ConvertResponseToJson&lt;T, TWrapper&gt; 구조로 범용성 확보. 기획자가 시트 수정 시 Unity에서 자동 갱신.</p>
             </div>
-            <div class="contrib-item">
+            <div class="contrib-item key">
               <h4>시스템 설계</h4>
-              <p>UML 기반 오브젝트 관계도 작성 후 작업 시작. Stack 기반 턴당 n개 스킬 실행 + 연쇄 발동 시스템. Encounter 이벤트(스킬 강화/가챠/스탯 변화) 구현.</p>
+              <p><strong>UML 기반 오브젝트 관계도 작성 후 작업 시작</strong>. Stack 기반 턴당 n개 스킬 실행 + 연쇄 발동 시스템. Encounter 이벤트(스킬 강화/가챠/스탯 변화) 구현.</p>
+              <div class="contrib-imgs">
+                <img src="images/lr-uml.jpg" alt="UML 오브젝트 관계도" class="contrib-img">
+              </div>
             </div>
           </div>
           <div class="project-tech">
@@ -128,6 +237,7 @@
           </div>
         </div>
         <div class="project-body">
+          <img src="images/tps-gameplay.jpg" alt="Side TPS 인게임 화면" class="project-thumb">
           <div class="contrib-grid contrib-grid-3">
             <div class="contrib-item">
               <h4>플레이어 & 무기</h4>
@@ -158,29 +268,59 @@
         </div>
         <div class="project-body">
           <div class="etc-timeline">
-            <div class="etc-item">
-              <span class="etc-year">2021</span>
-              <span class="etc-game">우리집은 어디에?</span>
+            <div class="etc-year-group">
+              <span class="etc-year-badge">2021</span>
+              <div class="etc-cards-row">
+                <div class="etc-card">
+                  <img src="images/etc-house.jpg" alt="우리집은 어디에?" class="etc-card-img">
+                  <div class="etc-card-info">
+                    <p class="etc-card-title">우리집은 어디에?</p>
+                    <p class="etc-card-desc">하늘에서 떨어지는 집을 최대한 높이 쌓는 캐주얼 게임</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="etc-item">
-              <span class="etc-year">2022</span>
-              <span class="etc-game">Ghost</span>
+            <div class="etc-year-group">
+              <span class="etc-year-badge">2022</span>
+              <div class="etc-cards-row">
+                <div class="etc-card">
+                  <img src="images/etc-ghost.jpg" alt="Ghost" class="etc-card-img">
+                  <div class="etc-card-info">
+                    <p class="etc-card-title">Ghost</p>
+                    <p class="etc-card-desc">슬라이드 퍼즐 & 비주얼 노벨</p>
+                  </div>
+                </div>
+                <div class="etc-card">
+                  <img src="images/etc-cafe.jpg" alt="어서오세요 카페24에" class="etc-card-img">
+                  <div class="etc-card-info">
+                    <p class="etc-card-title">어서오세요. 카페 24에</p>
+                    <p class="etc-card-desc">낮에는 카페 운영, 밤에는 레시피를 연구하는 카페 시뮬레이션 게임</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="etc-item">
-              <span class="etc-year">2022</span>
-              <span class="etc-game">어서오세요. 카페 24에</span>
-            </div>
-            <div class="etc-item highlight">
-              <span class="etc-year">2023</span>
-              <span class="etc-game">Neo Slasher <em>— 사이버펑크 뱀서라이크, 60개 아이템, 20레벨 특성 시스템</em></span>
-            </div>
-            <div class="etc-item">
-              <span class="etc-year">2023</span>
-              <span class="etc-game">Dumbest Letter</span>
+            <div class="etc-year-group">
+              <span class="etc-year-badge">2023</span>
+              <div class="etc-cards-row">
+                <div class="etc-card">
+                  <img src="images/etc-neoslasher.jpg" alt="Neo Slasher" class="etc-card-img">
+                  <div class="etc-card-info">
+                    <p class="etc-card-title">Neo Slasher</p>
+                    <p class="etc-card-desc">사이버펑크 뱀서라이크. 60개 아이템, 20레벨 특성 시스템</p>
+                  </div>
+                </div>
+                <div class="etc-card">
+                  <img src="images/etc-dumbest.jpg" alt="Dumbest Letter" class="etc-card-img">
+                  <div class="etc-card-info">
+                    <p class="etc-card-title">Dumbest Letter</p>
+                    <p class="etc-card-desc">종이 비행기를 최대한 멀리 날리는 게임. 날아간 거리에 비례한 점수로 비행기 강화</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="project-tech">
-            <span>Rigging</span><span>Cinemachine</span><span>NavMesh</span><span>JSON</span><span>FSM AI</span><span>Dialogue System</span>
+            <span>JSON</span><span>Dialogue System</span>
           </div>
         </div>
       </div>

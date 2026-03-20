@@ -7,9 +7,27 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.project-card, .skill-group, .growth-item, .contact-item, .section-title').forEach(el => {
+document.querySelectorAll('.project-card, .skill-group, .growth-item, .contact-item, .section-title, .status-card').forEach(el => {
   el.classList.add('fade-up');
   observer.observe(el);
+});
+
+// Hamburger menu
+const hamburger = document.querySelector('.nav-hamburger');
+const navMobile = document.querySelector('.nav-mobile');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('open');
+  navMobile.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+navMobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navMobile.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
 });
 
 // Navbar active link highlight on scroll
